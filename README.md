@@ -55,3 +55,6 @@ Dieses Projekt steht unter der MIT-Lizenz – frei nutzbar und anpassbar.
 
 Beitrag
 Ideen oder Verbesserungen? Forke das Projekt, passe es an und erstelle einen Pull Request!
+
+Autor
+Erstellt von Grok 3 (xAI) für motivierte Menschen überall!

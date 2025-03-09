@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Motivations-App</title>
+    <style>body {
+        font-family: Arial, sans-serif;
+        background: linear-gradient(135deg, #ff6b6b, #4ecdc4);
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+    }
+    
+    .container {
+        text-align: center;
+        background: rgba(255, 255, 255, 0.9);
+        padding: 40px;
+        border-radius: 15px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+    
+    h1 {
+        color: #333;
+        margin-bottom: 20px;
+    }
+    
+    .quote-box {
+        margin: 20px 0;
+        padding: 20px;
+        border-left: 5px solid #ff6b6b;
+        background: #fff;
+        border-radius: 10px;
+        animation: fadeIn 1s ease-in-out;
+    }
+    
+    #quote {
+        font-size: 1.5em;
+        color: #333;
+        margin: 0;
+    }
+    
+    #author {
+        font-size: 1em;
+        color: #777;
+        margin-top: 10px;
+    }
+    
+    button {
+        padding: 12px 25px;
+        font-size: 1.1em;
+        background-color: #ff6b6b;
+        color: white;
+        border: none;
+        border-radius: 25px;
+        cursor: pointer;
+        transition: transform 0.3s, background-color 0.3s;
+    }
+    
+    button:hover {
+        background-color: #ff8787;
+        transform: scale(1.05);
+    }
+    
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }</style>
+</head>
+<body>
+    <div class="container">
+        <h1>Motivations-Boost</h1>
+        <div id="quote-box" class="quote-box">
+            <p id="quote">Klick auf den Button für Inspiration!</p>
+            <p id="author">– Dein virtueller Motivator</p>
+        </div>
+        <button id="new-quote">Neues Zitat</button>
+    </div>
+    <script>const quotes = [
+        { text: "Der beste Weg, die Zukunft vorherzusagen, ist, sie zu gestalten.", author: "Peter Drucker" },
+        { text: "Es ist nicht zu wenig Zeit, die wir haben, sondern zu viel Zeit, die wir nicht nutzen.", author: "Lucius Annaeus Seneca" },
+        { text: "Der Erfolg hat viele Väter, der Misserfolg ist ein Waisenkind.", author: "John F. Kennedy" },
+        { text: "Träume nicht dein Leben, lebe deinen Traum.", author: "Unbekannt" },
+        { text: "Jeder Tag ist eine neue Chance, dein Leben zu ändern.", author: "Unbekannt" }
+    ];
+    
+    const quoteText = document.getElementById("quote");
+    const quoteAuthor = document.getElementById("author");
+    const newQuoteBtn = document.getElementById("new-quote");
+    
+    function getRandomQuote() {
+        const randomIndex = Math.floor(Math.random() * quotes.length);
+        const quote = quotes[randomIndex];
+        quoteText.textContent = quote.text;
+        quoteAuthor.textContent = `– ${quote.author}`;
+        document.querySelector(".quote-box").style.animation = "none";
+        setTimeout(() => {
+            document.querySelector(".quote-box").style.animation = "fadeIn 1s ease-in-out";
+        }, 10);
+    }
+    
+    newQuoteBtn.addEventListener("click", getRandomQuote);</script>
+</body>
+</html>

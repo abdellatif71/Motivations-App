@@ -21,7 +21,7 @@ Genieße die Motivation!
 Dateistruktur
 text
 
-Réduire
+
 
 Envelopper
 
